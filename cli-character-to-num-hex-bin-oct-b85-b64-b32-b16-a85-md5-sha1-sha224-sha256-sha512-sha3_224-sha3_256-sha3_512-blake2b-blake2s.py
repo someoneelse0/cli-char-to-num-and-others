@@ -1,0 +1,53 @@
+#!/usr/bin/python3
+
+import base64,codecs,hashlib
+
+print()
+i=input("Introduce any character, phrase or sentence: ")
+print()
+for a in i:
+    print("Characacter to number: "+str(ord(a)))
+print()
+for aa in i:
+    print("Number to hexadecimal: "+hex(ord(aa))[2:])
+print()
+for aaa in i:
+    print("Number to binary: "+bin(ord(aaa))[2:])
+print()
+for aaaa in i:
+    print("Number to octal: "+oct(ord(aaaa))[2:])
+print()
+
+b=codecs.encode(i)
+b85=base64.b85encode(b)
+print("Character, phrase or sentence to b85: "+codecs.decode(b85))
+b64=base64.b64encode(b)
+print("Character, phrase or sentence to b64: "+codecs.decode(b64))
+b32=base64.b32encode(b)
+print("Character, phrase or sentence to b32: "+codecs.decode(b32))
+b16=base64.b16encode(b)
+print("Character, phrase or sentence to b16: "+codecs.decode(b16))
+a85=base64.a85encode(b)
+print("Character, phrase or sentence to a85: "+codecs.decode(a85))
+print()
+md5=hashlib.md5(b).hexdigest()
+print("Character, phrase or sentence to md5: "+md5)
+sha1=hashlib.sha1(b).hexdigest()
+print("Character, phrase or sentence to sha1: "+sha1)
+sha224=hashlib.sha224(b).hexdigest()
+print("Character, phrase or sentence to sha224: "+sha224)
+sha256=hashlib.sha256(b).hexdigest()
+print("Character, phrase or sentence to sha256: "+sha256)
+sha512=hashlib.sha512(b).hexdigest()
+print("Character, phrase or sentence to sha512: "+sha512)
+sha3_224=hashlib.sha3_224(b).hexdigest()
+print("Character, phrase or sentence to sha3_224: "+sha3_224)
+sha3_256=hashlib.sha3_256(b).hexdigest()
+print("Character, phrase or sentence to sha3_256: "+sha3_256)
+sha3_512=hashlib.sha3_512(b).hexdigest()
+print("Character, phrase or sentence to sha3_512: "+sha3_512)
+blake2b=hashlib.blake2b(b).hexdigest()
+print("Character, phrase or sentence to blake2b: "+blake2b)
+blake2s=hashlib.blake2s(b).hexdigest()
+print("Character, phrase or sentence to blake2s: "+blake2s)
+print()
